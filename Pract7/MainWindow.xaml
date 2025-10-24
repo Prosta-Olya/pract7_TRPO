@@ -20,34 +20,71 @@
                 <RowDefinition  Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0" x:Name="panel1">
                 <Label>Форма регистрации пользователя</Label>
-                <Label>ID</Label>
-                <TextBox Margin="5" Text="{Binding Id}"/>
-                <Label>Имя</Label>
-                <TextBox Margin="5" Text="{Binding Name}"/>
-                <Label>Фамилия</Label>
-                <TextBox Margin="5" Text="{Binding LastName}"/>
-                <Label>Специализация</Label>
-                <TextBox Margin="5" Text="{Binding Specialisation}"/>
-                <Label>Пароль</Label>
-                <TextBox Margin="5" Text="{Binding Password}"/>
-                <Label>Подтверждение пароля</Label>
-                <TextBox Margin="5" Text="{Binding Password}"/>
-                <Button>Зарегистрироваться</Button>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0">ID</Label>
+                    <TextBox Margin="5" Text="{Binding Id}" Grid.Column="1" Grid.Row="0"/>
+                    <Label Grid.Column="0" Grid.Row="1">Имя</Label>
+                    <TextBox Margin="5" Text="{Binding Name}" Grid.Column="1" Grid.Row="1"/>
+                    <Label Grid.Column="0" Grid.Row="2">Фамилия</Label>
+                    <TextBox Margin="5" Text="{Binding LastName}" Grid.Column="1" Grid.Row="2"/>
+                    <Label Grid.Column="0" Grid.Row="3">Отчество</Label>
+                    <TextBox Margin="5" Text="{Binding MiddleName}" Grid.Column="1" Grid.Row="3"/>
+                    <Label Grid.Column="0" Grid.Row="4">Специализация</Label>
+                    <TextBox Margin="5" Text="{Binding Specialisation}" Grid.Column="1" Grid.Row="4"/>
+                    <Label Grid.Column="0" Grid.Row="5">Пароль</Label>
+                    <TextBox Margin="5" Text="{Binding Password}" Grid.Column="1" Grid.Row="5"/>
+                    <Label Grid.Column="0" Grid.Row="6">Подтверждение пароля</Label>
+                    <TextBox Margin="5" Text="{Binding Password}" Grid.Column="1" Grid.Row="6"/>
+            </Grid>
+                <Button Click="Registr">Зарегистрироваться</Button>
             </StackPanel>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" x:Name="panel2">
                 <Label>Форма входа пользователя</Label>
-                <Label>ID</Label>
-                <TextBox Margin="5" Text="{Binding Id}"/>
-                <Label>Пароль</Label>
-                <TextBox Margin="5" Text="{Binding Password}"/>
-                <Button>Войти</Button>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0">ID</Label>
+                    <TextBox Margin="5" Text="{Binding Id}" Grid.Column="1" Grid.Row="0"/>
+                    <Label Grid.Column="0" Grid.Row="1">Пароль</Label>
+                    <TextBox Margin="5" Text="{Binding Password}" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+                <Button Click="Input">Войти</Button>
             </StackPanel>
 
-            <StackPanel>
+            <StackPanel Grid.Row="2" x:Name="panel3">
                 <Label>Текущий пользователь</Label>
+                <TextBlock Text="Id:"/>
+                <TextBlock Text="{Binding Id}"/>
+                <TextBlock Text="Имя:"/>
+                <TextBlock Text="{Binding Name}"/>
+                <TextBlock Text="Фамилия:"/>
+                <TextBlock Text="{Binding LastName}"/>
+                <TextBlock Text="Специализация:"/>
+                <TextBlock Text="{Binding Specialisation}"/>
+                <TextBlock Text="Пароль:"/>
+                <TextBlock Text="{Binding Password}"/>
             </StackPanel>
             
             <!--<StackPanel>
